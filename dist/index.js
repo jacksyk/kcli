@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import inquirer from "inquirer";
 import fse from "fs-extra";
+import path from "path";
 fse.ensureFileSync("./kcli.json");
 fse.readJson("./kcli.json", (err, data) => {
     if (err) {
@@ -14,7 +15,7 @@ fse.readJson("./kcli.json", (err, data) => {
         return;
     }
     try {
-        const { template, target } = data;
+        const { template, target, baseTargetUrl } = data;
         inquirer
             .prompt([
             {
@@ -26,13 +27,14 @@ fse.readJson("./kcli.json", (err, data) => {
             {
                 type: "input",
                 name: "targetPath",
-                message: "请输入目标路径👊",
+                message: "请输入目标文件夹名👊",
                 default: target,
             },
         ])
             .then((answer) => {
             const { templatePath, targetPath } = answer;
-            fse.copy(templatePath, targetPath, (error) => {
+            const target_url = path.resolve(baseTargetUrl, targetPath);
+            fse.copy(templatePath, target_url, (error) => {
                 if (error) {
                     console.log(error);
                     console.error("你配置的文件有误，请重新配置🧐");

@@ -1,4 +1,5 @@
 {
     "template": "./template",
-    "target": "./target"
+    "target": "./target",
+    "baseTargetUrl": "./components"
 }

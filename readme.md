@@ -19,13 +19,15 @@ npm install @jack-syk/kcli -g
 
 -   template 模版的路径
 -   target 输出文件的路径
+-   baseTargetUrl 输出文件夹路径
 
 示例
 
 ```
 {
     "template": "./template",
-    "target": "./output"
+    "target": "./output",
+    "baseTargetUrl": "./component"
 }
 ```
 
