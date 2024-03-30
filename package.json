@@ -1,0 +1,27 @@
+{
+    "name": "@jack-syk/kcli",
+    "version": "1.0.0",
+    "description": "一款轻量级管理文件的工具",
+    "module": "./dist/index.js",
+    "type": "module",
+    "scripts": {
+        "tsc": "tsc -p ./tsconfig.json",
+        "preserve": "npm run tsc",
+        "serve": "node ./dist/index.js --version",
+        "build": "npm run tsc"
+    },
+    "bin": "./dist/index.js",
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@types/fs-extra": "^11.0.4",
+        "@types/inquirer": "^9.0.7",
+        "@types/node": "^20.11.30",
+        "typescript": "^5.4.3"
+    },
+    "dependencies": {
+        "fs-extra": "^11.2.0",
+        "inquirer": "^9.2.16"
+    }
+}

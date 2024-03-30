@@ -1,0 +1,19 @@
+{
+    "include": ["./src/*"],
+    "compilerOptions": {
+        "target": "ES2016",
+        "checkJs": true,
+        "declaration": true,
+        "outDir": "./dist",
+        "noImplicitAny": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noImplicitReturns": true,
+        "module": "NodeNext",
+        "baseUrl": ".", // 如果使用paths，必须设置baseUrl
+        "paths": {
+            "*": ["./node_modules/@types/*", "./typings/*"]
+        },
+        "moduleResolution": "NodeNext"
+    }
+}
